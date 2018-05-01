@@ -3,6 +3,7 @@
 
 set -ex
 
+BIN_DIR=bin
 BUILD_DIR=$1
 CACHE_DIR=$2
 VERSION_DIR=`cd $(dirname $0); cd ..; pwd`
@@ -43,6 +44,7 @@ compile_source() {
 
 vendor_bin() {
   cp $CACHE_DIR/$ARCHIVE_DIR/haproxy $BUILD_DIR/haproxy
+  cp $CACHE_DIR/$ARCHIVE_DIR/haproxy $BIN_DIR/haproxy
 }
 
 get_source

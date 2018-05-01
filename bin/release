@@ -1,12 +1,15 @@
 #!/usr/bin/env bash
+# bin/release <build-dir>
 
 echo "--- {}"
 
 cat << EOF
 ---
-addons: []
+addons:
+config_vars:
+  PATH: $PATH:bin
 default_process_types:
-  web: sbin/haproxy -f haproxy.cfg
+  web: bin/haproxy -f haproxy.cfg
 EOF
 
 echo "--- Done"
