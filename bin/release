@@ -9,7 +9,7 @@ addons:
 config_vars:
   PATH: $PATH:bin
 default_process_types:
-  web: bin/haproxy -f haproxy.cfg
+  web: /app/bin/haproxy -f haproxy.cfg
 EOF
 
 echo "--- Done"
