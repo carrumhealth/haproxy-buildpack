@@ -43,7 +43,10 @@ compile_source() {
 }
 
 vendor_bin() {
+  echo 'copying binary to BUILD_DIR'
   cp $CACHE_DIR/$ARCHIVE_DIR/haproxy $BUILD_DIR/haproxy
+
+  echo 'copying binary to application defined bin directory'
   cp $CACHE_DIR/$ARCHIVE_DIR/haproxy $BIN_DIR/haproxy
 }
 
