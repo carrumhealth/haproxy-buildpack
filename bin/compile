@@ -3,7 +3,7 @@
 
 set -ex
 
-BIN_DIR=bin
+BIN_DIR=$HOME/bin
 BUILD_DIR=$1
 CACHE_DIR=$2
 VERSION_DIR=`cd $(dirname $0); cd ..; pwd`
@@ -43,8 +43,14 @@ compile_source() {
 }
 
 vendor_bin() {
+  pwd
+
+  echo "HOME: $HOME"
+
   echo 'copying binary to BUILD_DIR'
   cp $CACHE_DIR/$ARCHIVE_DIR/haproxy $BUILD_DIR/haproxy
+
+  echo "haproxy installed: $(which haproxy)"
 
   echo 'copying binary to application defined bin directory'
   cp $CACHE_DIR/$ARCHIVE_DIR/haproxy $BIN_DIR/haproxy
